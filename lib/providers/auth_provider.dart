@@ -188,12 +188,12 @@ class AuthProvider extends ChangeNotifier {
       'dialog': dialog,
       'address': selectedAddress,
       'location': GeoPoint(serviceLatitude!, serviceLongitude!),
-      'shopOpen': true,
+      'serviceOpen': true,
       'rating': 0.00,
       'totalRating': 0,
-      'isTopPicked': true,
+      'isTopPicked': false,
       'imageUrl': url,
-      'accVerified': true
+      'accVerified': false
     });
     return null;
   }

@@ -35,170 +35,173 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.all(40.0),
             child: Center(
               child: Container(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Text('LOGIN',
-                          style: TextStyle(fontFamily: 'Anton', fontSize: 30)),
-                      const SizedBox(
-                        width: 20,
-                      ),
-                      Image.asset(
-                        'images/splash.png',
-                        height: 80,
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    controller: _emailTextController,
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Enter email';
-                      }
-                      final bool _isValid = EmailValidator.validate(
-                          _emailTextController.text.trim());
-                      if (!_isValid) {
-                        return 'Invalid Email Format';
-                      }
-                      setState(() {
-                        email = value;
-                      });
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.zero,
-                        hintText: 'Email',
-                        prefixIcon: Icon(Icons.email_outlined),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Theme.of(context).primaryColor,
-                                width: 2)),
-                        focusColor: Theme.of(context).primaryColor),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextFormField(
-                    validator: (value) {
-                      if (value!.isEmpty) {
-                        return 'Enter password';
-                      }
-                      if (value.length < 6) {
-                        return 'Minimun 6 characters';
-                      }
-                      setState(() {
-                        password = value;
-                      });
-                      return null;
-                    },
-                    obscureText: _visible == false ? true : false,
-                    decoration: InputDecoration(
-                        enabledBorder: OutlineInputBorder(),
-                        contentPadding: EdgeInsets.zero,
-                        hintText: 'Password',
-                        prefixIcon: Icon(Icons.vpn_key_outlined),
-                        suffixIcon: IconButton(
-                          icon: _visible
-                              ? Icon(Icons.visibility)
-                              : Icon(Icons.visibility_off),
-                          onPressed: () {
-                            setState(() {
-                              _visible = !_visible;
-                            });
-                          },
+                  child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        const Text('LOGIN',
+                            style:
+                                TextStyle(fontFamily: 'Anton', fontSize: 30)),
+                        const SizedBox(
+                          width: 20,
                         ),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Theme.of(context).primaryColor,
-                                width: 2)),
-                        focusColor: Theme.of(context).primaryColor),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, ResetPassword.id);
-                        },
-                        child: Text('Forgot Password ?',
-                            textAlign: TextAlign.end,
-                            style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold)),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, RegisterScreen.id);
-                    },
-                    child: Text('New Vendor? Register here.',
-                        textAlign: TextAlign.end,
-                        style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold)),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    Theme.of(context).primaryColor)),
+                        Image.asset(
+                          'images/splash.png',
+                          height: 80,
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      keyboardType: TextInputType.emailAddress,
+                      controller: _emailTextController,
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Enter email';
+                        }
+                        final bool _isValid = EmailValidator.validate(
+                            _emailTextController.text.trim());
+                        if (!_isValid) {
+                          return 'Invalid Email Format';
+                        }
+                        setState(() {
+                          email = value;
+                        });
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          contentPadding: EdgeInsets.zero,
+                          hintText: 'Email',
+                          prefixIcon: Icon(Icons.email_outlined),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).primaryColor,
+                                  width: 2)),
+                          focusColor: Theme.of(context).primaryColor),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return 'Enter password';
+                        }
+                        if (value.length < 6) {
+                          return 'Minimun 6 characters';
+                        }
+                        setState(() {
+                          password = value;
+                        });
+                        return null;
+                      },
+                      obscureText: _visible == false ? true : false,
+                      decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                          contentPadding: EdgeInsets.zero,
+                          hintText: 'Password',
+                          prefixIcon: Icon(Icons.vpn_key_outlined),
+                          suffixIcon: IconButton(
+                            icon: _visible
+                                ? Icon(Icons.visibility)
+                                : Icon(Icons.visibility_off),
                             onPressed: () {
-                              if (_formKey.currentState!.validate()) {
-                                setState(() {
-                                  _loading = true;
-                                });
-                                _authData
-                                    .loginVendor(email, password)
-                                    .then((credential) {
-                                  if (credential != null) {
-                                    setState(() {
-                                      _loading = false;
-                                    });
-                                    Navigator.pushReplacementNamed(
-                                        context, HomeScreen.id);
-                                  } else {
-                                    setState(() {
-                                      _loading = false;
-                                    });
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                        SnackBar(
-                                            content: Text(_authData.error)));
-                                  }
-                                });
-                              }
-                              // Navigator.pushReplacementNamed(context, LoginScreen.id);
+                              setState(() {
+                                _visible = !_visible;
+                              });
                             },
-                            child: _loading
-                                ? LinearProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      Colors.white,
-                                    ),
-                                    backgroundColor: Colors.transparent)
-                                : Text(
-                                    'Login',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  )),
-                      ),
-                    ],
-                  )
-                ],
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Theme.of(context).primaryColor,
+                                  width: 2)),
+                          focusColor: Theme.of(context).primaryColor),
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, ResetPassword.id);
+                          },
+                          child: Text('Forgot Password ?',
+                              textAlign: TextAlign.end,
+                              style: TextStyle(
+                                  color: Colors.blue,
+                                  fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: ElevatedButton(
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      Theme.of(context).primaryColor)),
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {
+                                  setState(() {
+                                    _loading = true;
+                                  });
+                                  _authData
+                                      .loginVendor(email, password)
+                                      .then((credential) {
+                                    if (credential != null) {
+                                      setState(() {
+                                        _loading = false;
+                                      });
+                                      Navigator.pushReplacementNamed(
+                                          context, HomeScreen.id);
+                                    } else {
+                                      setState(() {
+                                        _loading = false;
+                                      });
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                              content: Text(_authData.error)));
+                                    }
+                                  });
+                                }
+                                // Navigator.pushReplacementNamed(context, LoginScreen.id);
+                              },
+                              child: _loading
+                                  ? LinearProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        Colors.white,
+                                      ),
+                                      backgroundColor: Colors.transparent)
+                                  : Text(
+                                      'Login',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    )),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, RegisterScreen.id);
+                      },
+                      child: Text('New Vendor?  Register here.',
+                          textAlign: TextAlign.end,
+                          style: TextStyle(
+                              color: Colors.blue, fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
               )),
             ),
           ),

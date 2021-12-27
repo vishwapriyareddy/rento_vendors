@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rento_vendor/providers/auth_provider.dart';
 import 'package:rento_vendor/screen/home_screen.dart';
+import 'package:rento_vendor/screen/login_screen.dart';
 
 class RegisterForm extends StatefulWidget {
   const RegisterForm({Key? key}) : super(key: key);
@@ -324,7 +325,17 @@ class _RegisterFormState extends State<RegisterForm> {
                       ),
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 10),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, LoginScreen.id);
+                  },
+                  child: Text('Already Registered?  Login here.',
+                      textAlign: TextAlign.end,
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           );

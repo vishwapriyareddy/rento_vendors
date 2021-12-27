@@ -40,7 +40,9 @@ class _SplashScreenState extends State<SplashScreen> {
         }
       });
     });
-    super.initState();
+    if (mounted) {
+      super.initState();
+    }
   }
 
   @override

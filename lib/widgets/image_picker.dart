@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'package:provider/provider.dart';
 import 'package:rento_vendor/providers/auth_provider.dart';
 
@@ -20,7 +18,7 @@ class _ServicePicCardState extends State<ServicePicCard> {
 
     final _authData = Provider.of<AuthProvider>(context);
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(2.0),
       child: InkWell(
         onTap: () {
           _authData.getImage().then((image) {
