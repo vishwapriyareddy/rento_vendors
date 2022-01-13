@@ -45,6 +45,9 @@ dependencies:
   geolocator: ^7.7.1
   flutter_slider_drawer: ^2.0.0
   flutter_easyloading: ^3.0.3
+  chips_choice_null_safety: ^2.0.4
+  intl: ^0.17.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

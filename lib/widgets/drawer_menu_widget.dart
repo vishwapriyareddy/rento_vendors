@@ -8,6 +8,7 @@ import 'package:rento_vendor/providers/product_provider.dart';
 import 'package:rento_vendor/screen/banner_screen.dart';
 import 'package:rento_vendor/screen/home_screen.dart';
 import 'package:rento_vendor/screen/login_screen.dart';
+import 'package:rento_vendor/screen/order_screen.dart';
 import 'package:rento_vendor/screen/product_screen.dart';
 
 class DrawerMenu extends StatefulWidget {
@@ -80,7 +81,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               },
             ),
             MenuList(
-              title: "Product",
+              title: "Services",
               iconName: Icons.shopping_bag_outlined,
               press: () {
                 Navigator.pushNamed(context, ProductScreen.id);
@@ -94,14 +95,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
               },
             ),
             MenuList(
-              title: "Coupons",
-              iconName: CupertinoIcons.gift,
-              press: () {},
-            ),
-            MenuList(
               title: "Orders",
               iconName: Icons.list_alt_outlined,
-              press: () {},
+              press: () {
+                Navigator.pushNamed(context, OrderScreen.id);
+              },
             ),
             MenuList(
               title: "Reports",
