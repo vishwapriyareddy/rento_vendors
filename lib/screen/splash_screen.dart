@@ -1,8 +1,6 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:rento_vendor/screen/home_screen.dart';
 import 'package:rento_vendor/screen/login_screen.dart';
 import 'package:rento_vendor/screen/register_screen.dart';

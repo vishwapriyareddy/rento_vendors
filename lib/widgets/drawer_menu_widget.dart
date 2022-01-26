@@ -141,33 +141,28 @@ class MenuList extends StatelessWidget {
       onTap: press,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Flexible(
-          child: Container(
-              height: 45,
-              width: 170,
-
-              // width: 170,
-              padding: EdgeInsets.all(5.0),
-              decoration: BoxDecoration(
-                  color: Colors.white24,
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(mainAxisAlignment: MainAxisAlignment.start,
-                  // mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      iconName,
-                      color: Colors.white,
+        child: Container(
+            height: 45,
+            width: 170,
+            padding: EdgeInsets.all(5.0),
+            decoration: BoxDecoration(
+                color: Colors.white24, borderRadius: BorderRadius.circular(10)),
+            child: Row(mainAxisAlignment: MainAxisAlignment.start,
+                // mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    iconName,
+                    color: Colors.white,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Text(
+                      title,
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: Text(
-                        title,
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ])),
-        ),
+                  ),
+                ])),
       ),
     );
   }

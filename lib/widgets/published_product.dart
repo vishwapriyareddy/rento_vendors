@@ -38,7 +38,7 @@ class PublishedProduct extends StatelessWidget {
               child: FittedBox(
                 child: DataTable(
                   columns: <DataColumn>[
-                    DataColumn(label: Expanded(child: Text('Service '))),
+                    DataColumn(label: Expanded(child: Text('Service'))),
                     DataColumn(label: Text('Image')),
                     DataColumn(label: Text('Info')),
                     DataColumn(label: Text('Actions')),
