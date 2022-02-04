@@ -29,7 +29,7 @@ class _OrderScreenState extends State<OrderScreen> {
     'All Orders',
     'Ordered',
     'Accepted',
-    'On the way',
+    'On the Way',
     'Service Start',
     'Service Completed',
   ];
