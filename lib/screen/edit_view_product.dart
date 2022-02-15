@@ -69,7 +69,7 @@ class _EditViewProductState extends State<EditViewProduct> {
               document.get('category')['subCategory'];
           dropdownValue = document.get('collection');
           _taxTextController.text = document.get('tax').toString();
-          categoryImage = document.get('categoryImage');
+          categoryImage = document.get('serviceImage');
         });
       }
     });
@@ -159,8 +159,8 @@ class _EditViewProductState extends State<EditViewProduct> {
                           categoryImage: categoryImage);
                       EasyLoading.dismiss();
                     }
-                      _provider.resetProvider();
-                    //   EasyLoading.dismiss();
+                    _provider.resetProvider();
+                    //EasyLoading.dismiss();
                   },
                   child: Container(
                     width: 50,

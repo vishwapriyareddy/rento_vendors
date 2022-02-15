@@ -12,7 +12,6 @@ import 'package:rento_vendor/providers/order_provider.dart';
 import 'package:rento_vendor/providers/product_provider.dart';
 import 'package:rento_vendor/screen/add_new_product_screen.dart';
 import 'package:rento_vendor/screen/banner_screen.dart';
-
 import 'package:rento_vendor/screen/home_screen.dart';
 import 'package:rento_vendor/screen/login_screen.dart';
 import 'package:rento_vendor/screen/order_screen.dart';

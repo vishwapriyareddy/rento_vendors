@@ -60,24 +60,22 @@ class PublishedProduct extends StatelessWidget {
       // if (document != null) {
       return DataRow(cells: [
         DataCell(Container(
-            child: Expanded(
-          child: ListTile(
-            title: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'Name: ',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                  ),
+            child: ListTile(
+          title: Row(
+            children: [
+              Expanded(
+                child: Text(
+                  'Name: ',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: Text(
-                    document.get('serviceName'),
-                    style: TextStyle(fontSize: 15),
-                  ),
+              ),
+              Expanded(
+                child: Text(
+                  document.get('serviceName'),
+                  style: TextStyle(fontSize: 15),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ))),
         DataCell(Container(
